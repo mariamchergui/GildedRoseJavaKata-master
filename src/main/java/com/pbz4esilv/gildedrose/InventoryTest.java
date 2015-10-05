@@ -11,7 +11,7 @@ public class InventoryTest {
      * et aucun changement pour l'objet "Sulfuras"
      */
     @Test
-    public void updateQuality_Test() throws Exception{
+    public void updateQuality_Test() throws Exception {
         //Initialisation
         Item[] items = new Item[]{
                 new Item("+5 Dexterity Vest", 10, 20),
@@ -22,3 +22,4 @@ public class InventoryTest {
                 new Item("Conjured Mana Cake", 3, 6)
         };
 
+    }
