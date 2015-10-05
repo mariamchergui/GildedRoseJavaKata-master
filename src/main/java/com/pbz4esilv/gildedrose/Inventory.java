@@ -1,4 +1,5 @@
 package com.pbz4esilv.gildedrose;
+import java.util.stream.Stream;
 
 public class Inventory {
 
