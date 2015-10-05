@@ -52,6 +52,8 @@ public class Inventory {
         );
     }
 
+
+
     public void updateQuality() {
 
         Stream<Item> itemStream = Stream.of(items).filter(item -> !item.getName().equals("Sulfuras"));
