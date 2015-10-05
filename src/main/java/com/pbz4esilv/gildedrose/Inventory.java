@@ -1,5 +1,4 @@
 package com.pbz4esilv.gildedrose;
-import java.util.stream.Stream;
 
 public class Inventory {
 
@@ -21,11 +20,10 @@ public class Inventory {
                 new Item("Conjured Mana Cake", 3, 6)
         };
 
-
-
     }
 
-     public Item[] getItems() {
+
+    public Item[] getItems() {
         return items;
     }
 
@@ -33,15 +31,14 @@ public class Inventory {
         this.items = items;
     }
 
-
     //Reusable method for updating Backstage and Aged Brie as nearly same constraints apply
     public void updateBSAB(Item item) {
         int itemSellin = item.getSellIn();
         int itemQuality = item.getQuality();
-            if (itemSellin <= 10 && itemSellin > 5)
-                item.setQuality(itemQuality + 2 <= 50 ? itemQuality + 2 : 50);
-            else if (itemSellin <= 5)
-                item.setQuality(itemQuality + 3 <= 50 ? itemQuality + 3 : 50);
+        if (itemSellin <= 10 && itemSellin > 5)
+            item.setQuality(itemQuality + 2 <= 50 ? itemQuality + 2 : 50);
+        else if (itemSellin <= 5)
+            item.setQuality(itemQuality + 3 <= 50 ? itemQuality + 3 : 50);
     }
 
     //Reusable method for updating conjured and other items
@@ -52,14 +49,12 @@ public class Inventory {
         );
     }
 
-
-
     public void updateQuality() {
 
         Stream<Item> itemStream = Stream.of(items).filter(item -> !item.getName().equals("Sulfuras"));
         itemStream.forEach(item -> item.setSellIn(item.getSellIn()-1));
 
-             for (Item item : items) {
+        for (Item item : items) {
             switch (item.getName()) {
 
                 case "Backstage passes":

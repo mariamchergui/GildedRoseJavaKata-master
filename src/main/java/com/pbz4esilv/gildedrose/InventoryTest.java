@@ -2,10 +2,6 @@ package com.pbz4esilv.gildedrose;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by MERIEM on 02-Oct-15.
- */
-
 
 public class InventoryTest {
 
@@ -16,7 +12,6 @@ public class InventoryTest {
      */
     @Test
     public void updateQuality_Test() throws Exception{
-
         //Initialisation
         Item[] items = new Item[]{
                 new Item("+5 Dexterity Vest", 10, 20),
