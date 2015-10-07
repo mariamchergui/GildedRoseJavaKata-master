@@ -23,7 +23,6 @@ public class Inventory {
 
     }
 
-
     public Item[] getItems() {
         return items;
     }
@@ -32,6 +31,23 @@ public class Inventory {
         this.items = items;
     }
 
+    //Reusable method for updating Backstage and Aged Brie as nearly same constraints apply
+    public void updateBSAB(Item item) {
+        int itemSellin = item.getSellIn();
+        int itemQuality = item.getQuality();
+        if (itemSellin <= 10 && itemSellin > 5)
+            item.setQuality(itemQuality + 2 <= 50 ? itemQuality + 2 : 50);
+        else if (itemSellin <= 5)
+            item.setQuality(itemQuality + 3 <= 50 ? itemQuality + 3 : 50);
+    }
+
+    //Reusable method for updating conjured and other items
+    public void updateConjDefault(Item item, int beforeSellin){
+        int itemQualityConjured = item.getQuality();
+        item.setQuality(item.getSellIn() <= 0 ? (itemQualityConjured - beforeSellin*2 >= 0 ? itemQualityConjured - beforeSellin*2 : 0) :
+                        (itemQualityConjured - beforeSellin >= 0 ? itemQualityConjured - beforeSellin : 0)
+        );
+    }
 
     public void updateQuality() {
 
@@ -68,3 +84,4 @@ public class Inventory {
         }
     }
 }
+
